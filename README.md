@@ -70,7 +70,7 @@ This demo will:
 
 🎬 A short demonstration is provided below, featuring UI-to-code generation, UI editing, and UI polishing. The demo highlights how UI2Code^N enables seamless transitions between these capabilities within a unified interactive workflow.
 
-https://github.com/user-attachments/assets/9317c567-2b25-40c0-a4f3-7c8edd7a4387
+https://github.com/user-attachments/assets/3196a27d-3543-4029-9f36-429ec2acc7ff
 
 UI2Code^N achieves performance comparable to leading closed-source models such as Claude-4-Sonnet and GPT-5.
 
