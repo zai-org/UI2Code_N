@@ -2,7 +2,7 @@
 
 <div align="center">
     <a href="https://huggingface.co/zai-org/UI2Code_N">🤗 Model</a> •
-    <a href="https://arxiv.org/abs/***">📄 Paper</a> 
+    <a href="https://arxiv.org/abs/2511.08195">📄 Paper</a> 
     • <a href="#demo">▶️ Demo</a>
     • <a href="https://zheny2751-dotcom.github.io/ui2code-n.github.io/">🌐 Website</a>
 </div>
