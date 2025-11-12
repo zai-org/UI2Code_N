@@ -148,7 +148,7 @@ If you find our model or code useful in your research, please cite our paper:
 @article{ui2coden2025,
     title   = {UI2Code$^{N}$: A Visual Language Model for Test-Time Scalable Interactive UI-to-Code Generation},
     author  = {Yang, Zhen and Hong, Wenyi and Xu, Mingde and Fan, Xinyue and Wang, Weihan and Gu, Xiaotao and Tang, Jie},
-    journal = {arXiv preprint arXiv:2501.XXXXX},
+    journal = {arXiv preprint arXiv:2511.08195},
     year    = {2025}
 }
 ```
