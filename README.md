@@ -165,14 +165,12 @@ UI2Code^N achieves state-of-the-art performance across UI-to-code generation, UI
 ![Introduction Image](assets/reward.png)
 To justify the effectiveness of Relative Visual Policy Optimization (RVPO), we conduct an ablation study comparing an absolute (vanilla) reward against the full RVPO reward based on tournament-style aggregation. For UI polishing, RVPO consistently outperforms both supervised fine-tuning (SFT) and reinforcement learning with a vanilla verifier. For UI drafting, VLM-based absolute rewards provide consistent improvements over SFT, while CLIP-based rewards degrade performance, underscoring the sensitivity of UI drafting to proper reward design.
 
-
 ## Citation
 If you find our model or code useful in your research, please cite our paper:
-```
-@article{ui2coden2025,
-    title   = {UI2Code$^{N}$: A Visual Language Model for Test-Time Scalable Interactive UI-to-Code Generation},
-    author  = {Yang, Zhen and Hong, Wenyi and Xu, Mingde and Fan, Xinyue and Wang, Weihan and Gu, Xiaotao and Tang, Jie},
-    journal = {arXiv preprint arXiv:2511.08195},
-    year    = {2025}
+```bibtex
+@inproceedings{ui2coden2026,
+    title     = {UI2Code$^{N}$: UI-to-Code Generation as Interactive Visual Optimization},
+    author    = {Yang, Zhen and Hong, Wenyi and Xu, Mingde and Fan, Xinyue and Wang, Weihan and Cheng, Jiele and Gu, Xiaotao and Tang, Jie},
+    booktitle = {Proceedings of the 43rd International Conference on Machine Learning},
+    year      = {2026}
 }
-```
