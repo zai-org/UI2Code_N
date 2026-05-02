@@ -22,7 +22,7 @@ To address the non-differentiability of visual objectives and the noise of absol
 </p>
 
 
-(**Top**) Comparison of UI-to-code generation outputs from leading models versus our model, using the same reference screenshot. Our model achieves the highest fidelity, further enhanced by our UI polishing capability. (**Bottom left**) Performance comparison on UI-to-code and UI polishing tasks. (**Bottom right**) Test-time scaling curve of our model on the UI-to-code task, enabled by our interactive UI-to-code paradigm.
+(**Left**) The VLM first performs **UI drafting** to generate an initial code draft $C^{(0)}$, which is rendered into $R^{(0)}$. Using visual feedback from the rendering, the same VLM iteratively performs **UI polishing** to produce refined code $C^{(t)}$. (**Middle**) **Relative Visual Policy Optimization (RVPO)**, the proposed reinforcement learning algorithm used to optimize both UI drafting and UI polishing. (**Right**) Performance consistently improves with additional refinement steps, highlighting the iterative nature of real-world UI development.
 
 ## Method Overview
 
