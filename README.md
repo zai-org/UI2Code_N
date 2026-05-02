@@ -1,4 +1,4 @@
-<h1>UI2Code^N: A Visual Language Model for Test-Time Scalable Interactive UI-to-Code Generation</h1>
+<h1>UI2Code^N: UI-to-Code Generation as Interactive Visual Optimization</h1>
 
 <div align="center">
     <a href="https://huggingface.co/zai-org/UI2Code_N">🤗 Model</a> •
@@ -6,11 +6,16 @@
     • <a href="#demo">▶️ Demo</a>
     • <a href="https://zheny2751-dotcom.github.io/ui2code-n.github.io/">🌐 Website</a>
 </div>
+<div align="center">
+  <strong> 🎉 Accepted to ICML 2026 </strong>
+</div>
 
 <br>
 
-**UI2Code^N** is a visual language foundation model trained through staged **pretraining**, **fine-tuning**, and **reinforcement learning** to achieve foundational improvements in multimodal coding, which unifies three key capabilities: **UI-to-code generation**, **UI editing**, and **UI polishing**.
-Instead of relying on single-turn paradigms that make little use of iterative visual feedback, UI2Code^N introduces an interactive UI-to-code framework that more accurately reflects real-world workflows and raises the upper bound of achievable performance.
+**UI2Code^N** reformulates UI-to-code as an **interactive visual optimization problem**. By embedding code generation in a closed-loop process of execution, visual inspection, and iterative refinement driven by rendered visual feedback, it more accurately reflects real-world UI development workflows. It unifies three key capabilities: **UI drafting**, **UI editing**, and **UI polishing**.
+
+To address the non-differentiability of visual objectives and the noise of absolute visual evaluators, we propose **Relative Visual Policy Optimization (RVPO)**, a preference-based reinforcement learning method that optimizes relative visual rankings among rendered candidates under execution feedback.
+
 
 <p align="center">
   <img src="assets/fig1.png" width="95%">
