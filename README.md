@@ -26,8 +26,6 @@ To address the non-differentiability of visual objectives and the noise of absol
 
 ## Method Overview
 
-## Method Overview
-
 UI2Code^N follows an interactive UI-to-code paradigm that fundamentally departs from prior single-turn generation approaches. We formalize this process as a feedback-driven transformation:
 
 $$\mathcal{F}_{\theta}(I, C, R, E) \rightarrow C^{\prime}$$
