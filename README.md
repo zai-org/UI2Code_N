@@ -26,8 +26,14 @@ To address the non-differentiability of visual objectives and the noise of absol
 
 ## Method Overview
 
-UI2Code^N follows an interactive UI-to-code paradigm that fundamentally departs from
-prior single-turn generation approaches, redefining UI-to-code as an iterative and interactive process of **generation**, **editing**, and **polishing**.
+UI2Code^N follows an interactive UI-to-code paradigm that fundamentally departs from prior single-turn generation approaches. We formalize this process as a feedback-driven transformation:
+
+$$\mathcal{F}_{\theta}(I, C, R, E) \rightarrow C^{\prime}$$
+
+where $I$ denotes the target UI image, $C$ the current code, $R = \text{Render}(C)$ the rendered output, $E$ optional modification instructions, and $C^{\prime}$ the updated code. The optimization objective is to find code $C^{*}$ that minimizes an implicit visual discrepancy $\mathcal{D}$:
+
+$$C^{*} = \arg\min_{C} \mathcal{D}(I, \text{Render}(C))$$
+
 
 
 <p align="center">
