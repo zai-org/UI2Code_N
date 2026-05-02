@@ -155,15 +155,15 @@ print(output_text)
 
 We provide evaluation scripts and test cases for both widely used benchmarks (Design2Code, Flame-React-Eva, Web2Code) and our constructed benchmarks (UI2Code-Real, UIPolish-Real, UIPolish-Synthetic). For detailed instructions on running the evaluations, please refer to the guide in [evaluation/readme.md](./evaluation/readme.md).
 
-## Result
+## Experimental Results
 
 ### Experimental results on UI-to-Code and UI Polishing benchmarks
 ![Introduction Image](assets/result.png)
-UI2Code^N surpasses all open-source models by a large margin and even matches the performance of leading closed-source systems such as Claude-4-Sonnet-thinking and Gemini-2.5-pro
+[cite_start]UI2Code^N achieves state-of-the-art performance across UI-to-code generation, UI polishing, and UI editing benchmarks[cite: 70]. [cite_start]It consistently outperforms all open-source VLMs by a large margin and remains highly competitive with leading closed-source systems, including GPT-5, Gemini-2.5-Pro, and Claude-4-Sonnet.
 
-### Reward Design
+### The Impact of Reward Design
 ![Introduction Image](assets/reward.png)
-UI2Code^N designs three strategies for assessing UI polishing performance: the vanilla verifier, the verifier with a comparator function, and the verifier with both a comparator function and a round-robin strategy. UI2Code^N leverages automatic similarity measures and human-aligned judgments for UI-to-code generation: VLM Score and CLIP score.
+[cite_start]To justify the effectiveness of Relative Visual Policy Optimization (RVPO), we conduct an ablation study comparing an absolute (vanilla) reward against the full RVPO reward based on tournament-style aggregation . [cite_start]For UI polishing, RVPO consistently outperforms both supervised fine-tuning (SFT) and reinforcement learning with a vanilla verifier[cite: 294]. [cite_start]For UI drafting, VLM-based absolute rewards provide consistent improvements over SFT, while CLIP-based rewards degrade performance, underscoring the sensitivity of UI drafting to proper reward design.
 
 
 ## Citation
