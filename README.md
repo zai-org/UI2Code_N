@@ -26,6 +26,8 @@ To address the non-differentiability of visual objectives and the noise of absol
 
 ## Method Overview
 
+## Method Overview
+
 UI2Code^N follows an interactive UI-to-code paradigm that fundamentally departs from prior single-turn generation approaches. We formalize this process as a feedback-driven transformation:
 
 $$\mathcal{F}_{\theta}(I, C, R, E) \rightarrow C^{\prime}$$
@@ -34,11 +36,24 @@ where $I$ denotes the target UI image, $C$ the current code, $R = \text{Render}(
 
 $$C^{*} = \arg\min_{C} \mathcal{D}(I, \text{Render}(C))$$
 
-
-
 <p align="center">
   <img src="assets/fig2.png" width="95%">
 </p>
+
+### 1. Instantiations of Visual Optimization
+This interactive paradigm naturally unifies three key capabilities by defining how feedback and constraints are introduced:
+* **UI Drafting:** Initializes the optimization process by producing a first-pass code approximation from the target UI screenshot: $C^{(0)} = \mathcal{F}_{\theta}(I)$.
+* **UI Polishing (Visual Refinement):** Iteratively improves code quality by explicitly comparing the rendered execution feedback against the target UI. This enables test-time scaling: $C^{(t+1)} = \mathcal{F}_{\theta}(I, C^{(t)}, R^{(t)})$.
+* **UI Editing:** Acts as a conditional variant of refinement where localized code updates are guided by explicit natural language modification instructions $E$: $C^{\prime} = \mathcal{F}_{\theta}(I, C, E)$.
+
+### 2. Relative Visual Policy Optimization (RVPO)
+The optimization objective is defined over rendered UI outcomes, which are non-differentiable. Furthermore, absolute visual scoring by VLM judges is often noisy. To address this, we optimize a rank-based surrogate objective measuring expected preference:
+
+$$\mathcal{L}_{\text{rank}}(\theta) = \mathbb{E}_{y \sim \pi_{\theta}(\cdot|x)} \left[ \mathbb{E}_{y^{\prime} \sim \pi_{\theta}(\cdot|x)} [p_{\psi}(y > y^{\prime}|x)] \right]$$
+
+* **Tournament-based Reward:** We sample $N$ candidates and perform pairwise comparisons. Each candidate $y_i$ is assigned a scalar reward based on its aggregate win count within the group: $W_i = \sum_{j \neq i} \mathbb{1}[\mathcal{C}_{\psi}(x, y_i, y_j) = 1]$.
+* **Policy Optimization with GRPO:** We compute group-normalized advantages $A_i$ and update the policy using the clipped surrogate objective, ensuring stable learning under execution feedback.
+
 
 ## Table of Contents
 - [Table of Contents](#table-of-contents)
